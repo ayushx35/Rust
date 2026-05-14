@@ -3,7 +3,7 @@ fn main() {
     let str1 = String::from("Aysuhmaan");
     {
         let str2 = String::from("Aysuhmaan Singh");
-        longest = longer(&str1, &str2);
+        longest = longer(&str1, &str2).to_string();
         println!("{longest}");
     }
 }

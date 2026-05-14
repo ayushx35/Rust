@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "array",
+    "comments",
+    "enums",
+    "function",
+    "if_else",
+    "if_let",
+    "lifetimes",
+    "matchs",
+    "methods-struct",
+    "option_match",
+    "options",
+    "Ownership",
+    "references",
+    "structs",
+    "tuple",
+    "tuple_struct", "modules",
+]

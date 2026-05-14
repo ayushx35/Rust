@@ -1,0 +1,55 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.003436541s  INFO prepare_target{force=false package_id=options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options) target="options"}: cargo::core::compiler::fingerprint: fingerprint error for options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options)/Check { test: false }/TargetInner { name: "options", doc: true, ..: with_path("/Users/ayushmaansingh/Desktop/learn-rs/options/src/main.rs", Edition2024) }
+   0.003447833s  INFO prepare_target{force=false package_id=options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options) target="options"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/ayushmaansingh/Desktop/learn-rs/options/target/debug/.fingerprint/options-b770f19f2d73dbb6/bin-options`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.005727750s  INFO prepare_target{force=false package_id=options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options) target="options"}: cargo::core::compiler::fingerprint: fingerprint error for options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options)/Check { test: true }/TargetInner { name: "options", doc: true, ..: with_path("/Users/ayushmaansingh/Desktop/learn-rs/options/src/main.rs", Edition2024) }
+   0.005735166s  INFO prepare_target{force=false package_id=options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options) target="options"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/ayushmaansingh/Desktop/learn-rs/options/target/debug/.fingerprint/options-6204edb5c30a692e/test-bin-options`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking options v0.1.0 (/Users/ayushmaansingh/Desktop/learn-rs/options)
+error: could not compile `options` (bin "options" test) due to 4 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `options` (bin "options") due to 4 previous errors
