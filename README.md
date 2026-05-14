@@ -90,12 +90,12 @@ Floating point: f32, f64 (default)
 Boolean: bool
 Character: char (Unicode scalar value)
 ```
-```
+```bash
 Compound Types
 Rustlet tup: (i32, f64, u8) = (500, 6.4, 1);
 let (x, y, z) = tup;
 ```
-```
+```bash
 let arr = [1, 2, 3, 4, 5];        // fixed size
 let arr2 = [3; 5];                // [3,3,3,3,3]
 ```
@@ -106,7 +106,7 @@ let arr2 = [3; 5];                // [3,3,3,3,3]
 ### Each value has an owner.
 ### There can only be one owner at a time.
 ### When owner goes out of scope, value is dropped.
-```
+```bash
 Rustlet s1 = String::from("hello");
 let s2 = s1;        // s1 moved to s2 (not copied)
 println!("{}", s1); // ERROR
@@ -119,16 +119,18 @@ fn change(s: &mut String) {                 // mutable borrow
     s.push_str(", world");
 }
 ```
-Rules:
+## Rules:
 
-At any time, you can have one mutable reference OR any number of immutable references.
+### At any time, you can have one mutable reference OR any number of immutable references.
 References must always be valid (lifetimes).
 
-Lifetimes
+## Lifetimes
+```bash
 Rustfn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
-
+```
+```bash
 Control Flow
 Rustif condition { } else if { } else { }
 
@@ -159,9 +161,11 @@ Rustfn add(x: i32, y: i32) -> i32 {
 fn never_returns() -> ! {  // diverging function
     panic!("error");
 }
+```
 
-Structs, Enums & Pattern Matching
-Structs
+## Structs, Enums & Pattern Matching
+### Structs
+```bash
 Rust#[derive(Debug)]
 struct User {
     username: String,
@@ -183,11 +187,16 @@ enum Message {
     Move { x: i32, y: i32 },
     Write(String),
 }
-Option and Result are enums:
+```
+
+## Option and Result are enums:
+```bash
+
 Rustenum Option<T> { Some(T), None }
 enum Result<T, E> { Ok(T), Err(E) }
+```
 
-Modules, Crates & Packages
+## Modules, Crates & Packages
 Crate = compilation unit (binary or library).
 Rust// lib.rs or main.rs
 mod front_of_house;           // from front_of_house.rs
