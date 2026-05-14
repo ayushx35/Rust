@@ -82,29 +82,31 @@ Rustlet x = 5;
 let x = x + 1;       // new x
 let x = "now a string";
 ```
-Data Types
-Scalar Types
+## Data Types
+### Scalar Types
 
-Integers: i8, i16, i32 (default), i64, i128, u8...u128, isize, usize
+```bash Integers: i8, i16, i32 (default), i64, i128, u8...u128, isize, usize
 Floating point: f32, f64 (default)
 Boolean: bool
 Character: char (Unicode scalar value)
-
+```
+```
 Compound Types
 Rustlet tup: (i32, f64, u8) = (500, 6.4, 1);
 let (x, y, z) = tup;
-
+```
+```
 let arr = [1, 2, 3, 4, 5];        // fixed size
 let arr2 = [3; 5];                // [3,3,3,3,3]
+```
+## Ownership, Borrowing & Lifetimes
+### Core concept of Rust.
+### Ownership Rules
 
-Ownership, Borrowing & Lifetimes
-Core concept of Rust.
-Ownership Rules
-
-Each value has an owner.
-There can only be one owner at a time.
-When owner goes out of scope, value is dropped.
-
+### Each value has an owner.
+### There can only be one owner at a time.
+### When owner goes out of scope, value is dropped.
+```
 Rustlet s1 = String::from("hello");
 let s2 = s1;        // s1 moved to s2 (not copied)
 println!("{}", s1); // ERROR
@@ -116,6 +118,7 @@ Rustfn calculate_length(s: &String) -> usize {  // immutable borrow
 fn change(s: &mut String) {                 // mutable borrow
     s.push_str(", world");
 }
+```
 Rules:
 
 At any time, you can have one mutable reference OR any number of immutable references.
