@@ -60,16 +60,20 @@ rustup update
 # Check installation
 rustc --version
 cargo --version
-VS Code + rust-analyzer is the most popular setup.
+```
+## VS Code + rust-analyzer is the most popular setup.
 
-Basic Syntax & Hello World
+## Basic Syntax & Hello World
+```bash
 Rust// main.rs
 fn main() {
     println!("Hello, Rust!");           // macro
     eprintln!("Error message");         // to stderr
     println!("{} + {} = {}", 2, 3, 5);  // formatting
 }
-Variables (immutable by default):
+```
+## Variables (immutable by default):
+```bash
 Rustlet x = 5;           // immutable
 let mut y = 10;      // mutable
 const MAX_POINTS: u32 = 100_000;  // constant
@@ -77,7 +81,7 @@ Shadowing is allowed:
 Rustlet x = 5;
 let x = x + 1;       // new x
 let x = "now a string";
-
+```
 Data Types
 Scalar Types
 
