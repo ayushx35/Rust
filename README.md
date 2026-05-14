@@ -100,12 +100,11 @@ let arr = [1, 2, 3, 4, 5];        // fixed size
 let arr2 = [3; 5];                // [3,3,3,3,3]
 ```
 ## Ownership, Borrowing & Lifetimes
-### Core concept of Rust.
-### Ownership Rules
-
-### Each value has an owner.
-### There can only be one owner at a time.
-### When owner goes out of scope, value is dropped.
+- Core concept of Rust.
+- Ownership Rules
+- Each value has an owner.
+- There can only be one owner at a time.
+- When owner goes out of scope, value is dropped.
 ```bash
 Rustlet s1 = String::from("hello");
 let s2 = s1;        // s1 moved to s2 (not copied)
@@ -120,8 +119,7 @@ fn change(s: &mut String) {                 // mutable borrow
 }
 ```
 ## Rules:
-
-### At any time, you can have one mutable reference OR any number of immutable references.
+- At any time, you can have one mutable reference OR any number of immutable references.
 References must always be valid (lifetimes).
 
 ## Lifetimes
@@ -197,19 +195,22 @@ enum Result<T, E> { Ok(T), Err(E) }
 ```
 
 ## Modules, Crates & Packages
-Crate = compilation unit (binary or library).
+- Crate = compilation unit (binary or library).
 Rust// lib.rs or main.rs
+```bash
 mod front_of_house;           // from front_of_house.rs
 
 pub mod hosting {             // public module
     pub fn add_to_waitlist() {}
 }
-Use keyword:
-Rustuse crate::front_of_house::hosting;
-use std::collections::HashMap;
+```
 
-Collections
+### Use keyword:
+- Rustuse crate::front_of_house::hosting;
+- use std::collections::HashMap;
 
+## Collections
+```bash
 Vec<T>
 String
 HashMap<K, V>
@@ -220,9 +221,11 @@ v.push(4);
 
 let mut map = HashMap::new();
 map.insert("key", "value");
+```
 
-Error Handling
-Recoverable Errors (Result)
+## Error Handling
+- Recoverable Errors (Result)
+```bash 
 Rustfn read_file() -> Result<String, std::io::Error> {
     std::fs::read_to_string("file.txt")
 }
@@ -241,20 +244,22 @@ trait Summary {
 }
 
 impl<T: Display> Summary for T { ... }   // blanket impl
-Associated Types, Supertraits, Trait Objects (dyn Trait).
+```
+## Associated Types, Supertraits, Trait Objects (dyn Trait).
 
-Concurrency & Async
-Threads
-Rustuse std::thread;
-
+## Concurrency & Async
+- Threads
+- Rustuse std::thread;
+```bash
 let handle = thread::spawn(|| {
     // child thread
 });
-
-handle.join().unwrap();
-Channels (mpsc), Mutex, Arc.
-Async / Tokio (most popular)
-Rust#[tokio::main]
+```
+- handle.join().unwrap();
+- Channels (mpsc), Mutex, Arc.
+- Async / Tokio (most popular)
+- Rust#[tokio::main]
+```bash
 async fn main() {
     let result = some_async_fn().await;
 }
@@ -274,8 +279,8 @@ mod tests {
     fn it_panics() { ... }
 }
 cargo test, cargo test -- --test-threads=1
-
-Cargo & Project Management
+```
+## Cargo & Project Management
 Bashcargo new myproject
 cargo build
 cargo run
@@ -286,55 +291,18 @@ cargo doc --open     # generate docs
 cargo publish
 Cargo.toml key sections: [dependencies], [dev-dependencies], [[bin]], [lib]
 
-Common Patterns & Idioms
+## Useful Crates & Ecosystem
 
-Builder Pattern
-Newtype Pattern
-RAII (Resource Acquisition Is Initialization)
-Interior Mutability (Cell, RefCell, Mutex)
-Zero-Cost abstractions
+- Web: axum, actix-web, rocket
+- Async: tokio, async-std
+- CLI: clap, structopt
+- Data: serde, polars, arrow
+- WASM: wasm-bindgen, trunk
+- Embedded: embedded-hal
+- Testing: rstest, proptest
+- Error: thiserror, anyhow
 
+# Happy Rusting! 🦀
+## Made with ❤️ for learning Rust effectively.
 
-Performance & Unsafe Rust
-Rust is blazing fast — comparable to C/C++.
-unsafe blocks allow:
-
-Dereferencing raw pointers
-Calling unsafe functions
-Implementing unsafe traits
-
-Use sparingly and with caution.
-
-Useful Crates & Ecosystem
-
-Web: axum, actix-web, rocket
-Async: tokio, async-std
-CLI: clap, structopt
-Data: serde, polars, arrow
-WASM: wasm-bindgen, trunk
-Embedded: embedded-hal
-Testing: rstest, proptest
-Error: thiserror, anyhow
-
-
-Learning Resources & Official Docs
-Primary Resources
-
-The Rust Programming Language Book (Must read)
-Rust by Example
-Rust Reference
-The Rust Standard Library
-Async Book
-Rustonomicon (The Dark Arts of Unsafe Rust)
-
-Communities
-
-users.rust-lang.org
-Discord
-Reddit: r/rust, r/learnrust
-
-
-Happy Rusting! 🦀
-Made with ❤️ for learning Rust effectively.
-
-Contribution: Feel free to fork and improve these notes.
+### Contribution: Feel free to fork and improve these notes.
