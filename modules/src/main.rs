@@ -1,10 +1,15 @@
 use hello1::hello1 as hq;
 use hello1::hi1 as tt;
+mod fruit;
+mod hi;
 fn main() {
     hq();
     tt::hiq();
     hello::hello();
     hello::hi::hi();
+    fruit::fruits();
+    crate::hi::ayush::ayu();
+    crate::hi::singh::sin();
 }
 
 mod hello {
