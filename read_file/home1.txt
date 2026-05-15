@@ -1,0 +1,2 @@
+Hello! This is the content of home.txt.
+You have successfully read this file.
