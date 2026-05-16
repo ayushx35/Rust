@@ -2,6 +2,7 @@
 fn main() {
     hello!();
     hello!("Ayush");
+    hello!("Ayush", "Singh");
 }
 
 #[macro_export]
@@ -11,5 +12,8 @@ macro_rules! hello {
     };
     ($w:expr) => {
         println!("{}", $w)
+    };
+    ($w:expr,$a:expr) => {
+        println!("{} {}", $w, $a)
     };
 }
